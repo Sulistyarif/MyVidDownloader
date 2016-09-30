@@ -10,24 +10,50 @@
     android:background="#7ca8b3"
     tools:context="com.example.root.myviddownloader.MainActivity">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceSmall"
-        android:text="Small Text"
-        android:id="@+id/textView" />
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
 
-    <ListView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/listView"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentEnd="true"
-        android:layout_marginTop="10dp"
-        android:layout_marginRight="10dp"
-        android:layout_marginLeft="10dp"
-        android:dividerHeight="10dp"
-        android:background="#ffffff"
-        android:divider="#7ca8b3"
-        />
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <EditText
+                android:layout_width="270dp"
+                android:layout_height="wrap_content"
+                android:editable="true"
+                android:id="@+id/editText" />
+
+            <Button
+                android:layout_width="75dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:text="OK"
+                android:id="@+id/button" />
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:text="Small Text"
+            android:id="@+id/textView" />
+
+        <ListView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/listView"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true"
+            android:layout_marginTop="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginLeft="10dp"
+            android:dividerHeight="10dp"
+            android:background="#ffffff"
+            android:divider="#7ca8b3"
+            />
+    </LinearLayout>
+
 </RelativeLayout>

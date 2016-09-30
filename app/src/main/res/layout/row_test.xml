@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TextView
+    android:id="@+id/tv"
+    android:text="tela"
+    android:paddingLeft="10dp"
+    android:layout_width="100dp"
+    android:layout_height="25dp"
+    xmlns:android="http://schemas.android.com/apk/res/android" />

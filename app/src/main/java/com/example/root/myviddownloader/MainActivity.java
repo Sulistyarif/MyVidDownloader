@@ -19,7 +19,7 @@ import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity{
 
-    String[] arrayDat = new String [1];
+    String[] arrayDat = new String [20];
     String[] androArr = {"tela","tela1","tela2"};
 
     ArrayList<String> listItem = new ArrayList<String>();
@@ -36,15 +36,14 @@ public class MainActivity extends AppCompatActivity{
         lv = (ListView)findViewById(R.id.listView);
         tv = (TextView)findViewById(R.id.textView);
 
-        new scrap().execute();
 
         adapter = new ArrayAdapter<String>(this,android.R.layout.simple_list_item_1,listItem);
 
+        new scrap().execute();
+
         lv.setAdapter(adapter);
 
-        for (int i = 0; i<androArr.length ; i++){
-            listItem.add(arrayDat[i]);
-        }
+
 
     }
 
@@ -54,7 +53,7 @@ public class MainActivity extends AppCompatActivity{
         protected Void doInBackground(Void... params) {
 
             try{
-                Document doc = Jsoup.connect("https://savedeo.com/download?url=https%3A%2F%2Fwww.facebook.com%2FMemeComicIndonesi%2Fvideos%2F824026997722536%2F").get();
+                Document doc = Jsoup.connect("https://savedeo.com/download?url=https%3A%2F%2Fwww.youtube.com%2Fwatch%3Fv%3DuCRBxtQ55_Y").get();
                 Elements div = doc.getElementsByAttribute("data-event");
 
                 int i = 0;
@@ -78,7 +77,12 @@ public class MainActivity extends AppCompatActivity{
         @Override
         protected void onPostExecute(Void aVoid) {
             super.onPostExecute(aVoid);
-            tv.setText(arrayDat[0]);
+//            tv.setText(arrayDat[0]);
+            for (int i = 0; i<arrayDat.length ; i++){
+                listItem.add(arrayDat[i]);
+            }
+            adapter.notifyDataSetChanged();
+
         }
     }
 

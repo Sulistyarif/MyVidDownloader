@@ -20,6 +20,7 @@ import java.util.ArrayList;
 public class MainActivity extends AppCompatActivity{
 
     String[] arrayDat = new String [20];
+    String[] arrayLink = new String [20];
     String[] androArr = {"tela","tela1","tela2"};
 
     ArrayList<String> listItem = new ArrayList<String>();
@@ -58,11 +59,17 @@ public class MainActivity extends AppCompatActivity{
 
                 int i = 0;
 
-                for (Element llink: div) {
+                for (Element llink: div) { // taking information of resolution and video type
                     String attr = llink.attr("data-event");
                     String[] arr = attr.split("\\|");
                     String kataDiambil = arr[1] + " " + arr[2];
                     arrayDat[i] = kataDiambil;
+                    i++;
+                }
+
+                for (Element llink: div) { // taking the link
+                    String attr = llink.attr("href");
+                    arrayLink[i] = attr;
                     i++;
                 }
 
